@@ -8,4 +8,11 @@ def print2D(arr):
             print(cell, end=" ")
         print("")
 
-print2D(board)
+# this will keep re-printing the "Ocean" every turn
+# untill the user gives a certain input
+while True:
+    print2D(board)
+    user = input("Where would you like to hit?")
+    if "stop" in user:
+        break
+
