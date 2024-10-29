@@ -1,5 +1,10 @@
+import random
+
+w = 5
+h = 5
+
 # the "ocean"
-board = [["O"] * 5] * 5
+board = [["O"] * w] * h
 
 # prints a 2D array nicely
 def print2D(arr):
@@ -7,6 +12,8 @@ def print2D(arr):
         for cell in row:
             print(cell, end=" ")
         print("")
+
+ship_pos = (random.randint(0, w), random.randint(0, h))
 
 # this will keep re-printing the "Ocean" every turn
 # untill the user gives a certain input
