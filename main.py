@@ -19,12 +19,10 @@ ship_pos = (random.randint(0, w), random.randint(0, h))
 # untill the user gives a certain input
 while True:
     print2D(board)
-    vert = input("Where would you like to hit verticaly? from botom to top 1 to 5.")
-    horo = input("Where would you like to hit horozontly? from left to tright 1 to 5.")
-    user = (vert, horo)
-    if user == ship_pos:
+    user = input("Where would you like to hit horozontly? [x, y]")
+    if user == f"{ship_pos[0]}, {ship_pos[1]}":
         print("Hit! you win!")
-    elif "stop" in vert or horo:
+    elif "stop" == user:
         break
     else:
-        print("Wrong! try again.")
+        print("Miss! try again.")
