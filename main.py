@@ -35,4 +35,7 @@ while True:
         print("Miss! try again.")
         board[y][x] = "X"
         misses += 1
+        if misses == 5:
+            print("You lost, try again")
+            break
 
