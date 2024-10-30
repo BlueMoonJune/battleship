@@ -1,7 +1,7 @@
 import random
 
-w = 5
-h = 5
+w = int(input("width of grid"))
+h = int(input("height of grid"))
 
 # the "ocean"
 board = [["O"] * w for _ in range(0, h)]
