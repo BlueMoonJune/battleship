@@ -1,3 +1,6 @@
+#! /bin/python3.12
+import math
+
 import random
 
 w = int(input("width of grid"))
@@ -22,7 +25,7 @@ misses = 0
 # untill the user gives a certain input
 while True:
     print2D(board)
-    user = input("Where would you like to hit horozontly? [x, y]")
+    user = input("Where would you like to hit? [x, y]")
     x = int(user[:user.find(",")])
     y = int(user[user.find(" ") + 1:])
     if 0 > x >= w or 0 > y >= h:
