@@ -2,6 +2,7 @@ import random
 
 w = int(input("width of grid"))
 h = int(input("height of grid"))
+shipc = int(input("how many ships"))
 
 # the "ocean"
 board = [["O"] * w for _ in range(0, h)]
@@ -13,7 +14,7 @@ def print2D(arr):
             print(cell, end=" ")
         print("")
 
-ship_pos = (random.randint(0, w), random.randint(0, h))
+ship_pos = [(random.randint(0, w), random.randint(0, h)) for _ in range(0, shipc)]
 
 misses = 0
 
@@ -26,9 +27,13 @@ while True:
     y = int(user[user.find(" ") + 1:])
     if 0 > x >= w or 0 > y >= h:
         print("outside of board")
-    elif (x, y) == ship_pos:
-        print("Hit! you win!")
-        break
+    elif (x, y) in ship_pos:
+        print("You hit a ship!")
+        board[y][x] = "@"
+        ship_pos.remove((x, y))
+        if len(ship_pos) <= 0:
+            print("All ships sunk, you win!")
+            break
     elif "stop" == user:
         break
     else:
