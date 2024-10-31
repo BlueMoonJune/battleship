@@ -19,7 +19,7 @@ def print2D(arr):
 
 ship_pos = [(random.randint(0, w), random.randint(0, h)) for _ in range(0, shipc)]
 
-misses = 0
+misses = int(math.sqrt(w*h))
 
 # this will keep re-printing the "Ocean" every turn
 # untill the user gives a certain input
@@ -42,8 +42,8 @@ while True:
     else:
         print("Miss! try again.")
         board[y][x] = "X"
-        misses += 1
-        if misses == 5:
+        misses -= 1
+        if misses == 0:
             print("You lost, try again")
             break
 
